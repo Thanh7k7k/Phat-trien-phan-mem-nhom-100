@@ -1,0 +1,14 @@
+@model DemoMVC.Models.BMIModel
+
+@{
+    ViewData["Title"] = "Kết quả BMI";
+}
+
+<h2>Kết quả BMI</h2>
+
+<p>Cân nặng: <b>@Model.Weight</b> kg</p>
+<p>Chiều cao: <b>@Model.Height</b> m</p>
+<p>Chỉ số BMI: <b>@Model.BMI.ToString("0.00")</b></p>
+<p>Phân loại: <b>@Model.Category</b></p>
+
+<a href="/Bmi/Index">Quay lại</a>

@@ -1,0 +1,14 @@
+@model DemoMVC.Models.Tinh
+
+@{
+    ViewData["Title"] = "Kết quả";
+}
+
+<h2>Kết quả tính toán</h2>
+
+<p>Số 1: <b>@Model.Number1</b></p>
+<p>Số 2: <b>@Model.Number2</b></p>
+<p>Phép toán: <b>@Model.Operation</b></p>
+<p>Kết quả: <b>@Model.Result</b></p>
+
+<a href="/Tinh/Index">Quay lại</a>

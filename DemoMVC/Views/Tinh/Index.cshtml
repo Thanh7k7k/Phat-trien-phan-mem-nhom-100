@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Tính toán";
+}
+
+<h2>Tính bằng 4 phương pháp cơ bản</h2>
+
+<form method="post">
+    <div>
+        <label>Số thứ nhất:</label>
+        <input type="number" step="any" name="number1" required />
+    </div>
+    <div>
+        <label>Số thứ hai:</label>
+        <input type="number" step="any" name="number2" required />
+    </div>
+    <div>
+        <label>Chọn phép tính:</label>
+        <select name="operation">
+            <option value="add">Cộng (+)</option>
+            <option value="sub">Trừ (-)</option>
+            <option value="mul">Nhân (×)</option>
+            <option value="div">Chia (÷)</option>
+        </select>
+    </div>
+    <button type="submit">Tính</button>
+</form>
