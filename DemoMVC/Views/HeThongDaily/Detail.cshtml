@@ -1,0 +1,37 @@
+@model DemoMVC.Models.HeThongPhanPhoi
+
+<h2>Chi tiết Hệ Thống Phân Phối</h2>
+
+<p><strong>Mã HTPP:</strong> @Model.MaHTPP</p>
+<p><strong>Tên HTPP:</strong> @Model.TenHTPP</p>
+
+@if (Model.DaiLys != null && Model.DaiLys.Any())
+{
+    <h4>Danh sách Đại Lý thuộc hệ thống này:</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Mã Đại Lý</th>
+                <th>Tên Đại Lý</th>
+                <th>Địa chỉ</th>
+                <th>Điện thoại</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var dl in Model.DaiLys)
+        {
+            <tr>
+                <td>@dl.MaDaiLy</td>
+                <td>@dl.TenDaiLy</td>
+                <td>@dl.DiaChi</td>
+                <td>@dl.DienThoai</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Chưa có đại lý nào.</p>
+}
+<a asp-action="Index" class="btn btn-secondary">Quay lại</a>

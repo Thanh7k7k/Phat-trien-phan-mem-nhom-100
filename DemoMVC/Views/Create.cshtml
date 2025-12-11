@@ -8,6 +8,13 @@
 
 <h4>Person</h4>
 <hr />
+    <form asp-action="Upload" cactype="multipart/form-data">
+        <div class="row form-control">
+            <label class="col-sm-2">Import Data form Excel</label>
+            <input type="file" name="file" class="col-sn-4">
+            <input type="submit" value="Upload" class="btn btn-primary col-sm-1">
+        </div>
+    </form>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">

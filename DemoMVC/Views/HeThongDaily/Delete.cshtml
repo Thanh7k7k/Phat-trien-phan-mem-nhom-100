@@ -1,0 +1,11 @@
+@model DemoMVC.Models.HeThongPhanPhoi
+
+<h2>Xóa Hệ Thống Phân Phối</h2>
+
+<p>Bạn có chắc chắn muốn xóa hệ thống "<strong>@Model.TenHTPP</strong>" không?</p>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="MaHTPP" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

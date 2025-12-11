@@ -1,0 +1,35 @@
+@model IEnumerable<DemoMVC.Models.DaiLy>
+
+<h2>Danh sách Đại Lý</h2>
+<p><a asp-action="Create" class="btn btn-primary">+ Thêm mới</a></p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã Đại Lý</th>
+            <th>Tên Đại Lý</th>
+            <th>Địa Chỉ</th>
+            <th>Người Đại Diện</th>
+            <th>Điện Thoại</th>
+            <th>Hệ Thống Phân Phối</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.MaDaiLy</td>
+        <td>@item.TenDaiLy</td>
+        <td>@item.DiaChi</td>
+        <td>@item.NguoiDaiDien</td>
+        <td>@item.DienThoai</td>
+        <td>@item.HeThongPhanPhoi?.TenHTPP</td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.MaDaiLy">Sửa</a> |
+            <a asp-action="Delete" asp-route-id="@item.MaDaiLy">Xóa</a>
+        </td>
+    </tr>
+}
+    </tbody>
+</table>

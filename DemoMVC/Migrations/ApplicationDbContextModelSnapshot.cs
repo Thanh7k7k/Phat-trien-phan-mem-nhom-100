@@ -16,24 +16,122 @@ namespace DemoMVC.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.9");
 
-            modelBuilder.Entity("DemoMVC.Models.Person", b =>
+            modelBuilder.Entity("DemoMVC.Models.DaiLy", b =>
                 {
-                    b.Property<int>("PersonId")
+                    b.Property<string>("MaDaily")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DiaChi")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DienThoai")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("MaHTPP")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NguoiDaiDien")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TenDaily")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("MaDaily");
+
+                    b.ToTable("DaiLy");
+                });
+
+            modelBuilder.Entity("DemoMVC.Models.Demo", b =>
+                {
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Address")
-                        .HasMaxLength(200)
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Demo");
+                });
+
+            modelBuilder.Entity("DemoMVC.Models.Employee", b =>
+                {
+                    b.Property<string>("EmployeeId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("EmployeeId");
+
+                    b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("DemoMVC.Models.HeThongPhanPhoi", b =>
+                {
+                    b.Property<string>("MaHTPP")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TenHTPP")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("MaHTPP");
+
+                    b.ToTable("HeThongPhanPhoi");
+                });
+
+            modelBuilder.Entity("DemoMVC.Models.Person", b =>
+                {
+                    b.Property<string>("PersonId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("PersonId");
 
-                    b.ToTable("Persons");
+                    b.ToTable("Person");
+                });
+
+            modelBuilder.Entity("DemoMVC.Models.Student", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StudentCode")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Student");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,19 @@
+@model IEnumerable<DemoMVC.Models.HeThongPhanPhoi>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class='btn btn-primary'>Thêm mới</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã HTPP</th>
+            <th>Tên HTPP</th>
+            <th>Chức năng</th>
+        </tr>    
+    </thead>        

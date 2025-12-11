@@ -12,5 +12,7 @@ namespace DemoMVC.Data
         public DbSet<Employee> Employees { get; set; }
 
         public DbSet<Person> Persons { get; set; }
+        public DbSet<HeThongPhanPhoi> HeThongPhanPhois { get; set; }
+        public DbSet<DaiLy> DaiLys { get; set; }
     }
 }

@@ -1,0 +1,13 @@
+@model DemoMVC.Models.HeThongPhanPhoi
+
+<h2>Sửa Hệ Thống Phân Phối</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="MaHTPP" />
+    <div class="form-group">
+        <label>Tên HTPP</label>
+        <input asp-for="TenHTPP" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</form>
